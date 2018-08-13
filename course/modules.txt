@@ -1,0 +1,9 @@
+- os
+
+- Requests
+- Scrapy
+- BeautifulSoup
+- re
+
+- scipy
+- numpy

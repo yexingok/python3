@@ -50,9 +50,7 @@ def collect_comments(bookId, wantNum):
 if __name__ == '__main__':
     #bookId = input('Input Book ID?')
     result = collect_comments(4843462, 50)
-    num = 0
-    for text in result['comments']:
-        num += 1
-        print('{}\t{}'.format(num, text))
+    for count,text in enumerate(result['comments']):
+        print('{}\t{}'.format(count+1, text))
     print("")
-    print('Score: {}'.format(result['score']))
+    print('Score: {:.2f}'.format(result['score']))

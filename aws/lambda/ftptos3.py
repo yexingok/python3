@@ -115,7 +115,7 @@ def ftptos3(ftphost, ftppath, ftpsuffix, bucket, s3path):
             os.remove(localFile)
 
 
-def main(event, context):
+def main(event='event', context='context'):
     ftphost = 'ftp.ncbi.nlm.nih.gov'
     ftppath = 'pubmed/updatefiles'
     ftpsuffix = '*.gz'

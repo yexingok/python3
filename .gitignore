@@ -1,3 +1,11 @@
+.vscode
 python
 .bak
 .zip
+__pycache__
+
+*.pyc
+*.csv
+*.xlsx
+*.log
+*.log*

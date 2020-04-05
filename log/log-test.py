@@ -4,8 +4,8 @@ from logger import create_logger
 import os
 
 #Usage: 
-logfile = os.path.basename(__file__).replace(".py","",1)
-LOGGER = create_logger(app_name=logfile, level='DEBUG')
+logname = os.path.basename(__file__).replace(".py","",1)  #this filename log-test
+LOGGER = create_logger(app_name=logname,level='DEBUG')
 
 def yxtest1():
     LOGGER.info("Running %d", 1)

@@ -15,7 +15,9 @@ def collect_comments(bookId, wantNum):
         score:   (int) Average rating score.
         comments:[list] A list inclues all comments.
     '''
-
+    sleepTime = 5
+    # Add User-Agent otherwise douban will not return right HTML:
+    headers = {'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36'}
     haveNum, pageNum = 0, 1
     result = {}
     sum, scoreNum = 0, 0
@@ -25,7 +27,7 @@ def collect_comments(bookId, wantNum):
                   '/comments/hot?p=' + str(pageNum)
         print('Fetching page {} with url {}'.format(pageNum, bookurl))
         try:
-            r = requests.get(bookurl)
+            r = requests.get(bookurl, headers=headers)
         except Exception as err:
             print(err)
             break
@@ -42,7 +44,7 @@ def collect_comments(bookId, wantNum):
             sum += int(num)
             scoreNum += 1
         pageNum += 1
-        time.sleep(5)
+        time.sleep(sleepTime)
     result['score'] = sum / scoreNum
     result['comments'] = comments
     return result

@@ -33,3 +33,8 @@ print("Username: {}".format(uname))
 print("Home dir: {}".format(homedir))
 print("User shell:{}".format(sh))
 
+# Empty list
+record = ('Dave', 'dave@abc.com', '123-456-789','321-123-456')
+name, email, phone1, phone2, *test = record
+
+print('test: {}'.format(test))
